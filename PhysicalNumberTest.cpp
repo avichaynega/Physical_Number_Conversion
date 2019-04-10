@@ -12,6 +12,7 @@ using std::cout, std::endl, std::istringstream;
 using ariel::PhysicalNumber, ariel::Unit;
 #include "badkan.hpp"
 
+
 int main() {
   badkan::TestCase testcase;
   int grade=0;
