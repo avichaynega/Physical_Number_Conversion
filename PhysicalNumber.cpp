@@ -17,7 +17,7 @@ PhysicalNumber::PhysicalNumber(double parameter,Unit unit){
     const PhysicalNumber PhysicalNumber::operator-()const{return PhysicalNumber(-this->_parameter,this->_unit);}
     
     
-    const PhysicalNumber PhysicalNumber::operator+(const PhysicalNumber& p){
+    const PhysicalNumber PhysicalNumber::operator+(const PhysicalNumber& p)const{
     if(this->_unit == Unit::KM || this->_unit == Unit::M || this->_unit == Unit::CM){
     switch (p._unit)
     {
