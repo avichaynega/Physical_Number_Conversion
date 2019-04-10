@@ -10,23 +10,32 @@
 #include <stdexcept>
 using std::cout, std::endl, std::boolalpha, std::istringstream;
 #include "PhysicalNumber.h"
+<<<<<<< HEAD
+=======
+//#include "Unit.h"
+>>>>>>> d0e3a8c0a2f7e980f0fe790fd385166d58df0477
 using ariel::PhysicalNumber, ariel::Unit;
 
 int main() {
   try {
     PhysicalNumber a(2, Unit::KM);   // 2 kilometers
     PhysicalNumber b(300, Unit::M);  // 300 meters
-    cout << a << endl;   // Prints "2[km]"
+    cout << a << endl;   // Prints "2[km
+    cout << "************** " << endl;   // Prints "-2[km]"
     cout << (a+b) << endl;   // Prints "2.3[km]"
     cout << (b-a) << endl;   // Prints "-1700[m]"
     cout << (-a) << endl;   // Prints "-2[km]"
  
     cout << (++a) << endl;
 
+<<<<<<< HEAD
     cout << "++a" << endl;
     cout << (a++) << endl;
     cout << "a++" << endl;
     cout << a << endl;
+=======
+	    cout << (a+=b) << endl;   // Prints "-2[km]"
+>>>>>>> d0e3a8c0a2f7e980f0fe790fd385166d58df0477
     cout << boolalpha; // print booleans as strings from now on:
 
     cout << (a>b) << endl;  // Prints "true"

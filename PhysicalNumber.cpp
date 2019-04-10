@@ -171,7 +171,8 @@ PhysicalNumber::PhysicalNumber(double parameter,Unit unit){
 
 
     PhysicalNumber PhysicalNumber::operator+=(const PhysicalNumber& p) { 
-	 return this->operator+(p); }
+
+	 return this->operator+(&p); }
     PhysicalNumber PhysicalNumber::operator-=(const PhysicalNumber& p) {
 	return this->operator-(p);}
 

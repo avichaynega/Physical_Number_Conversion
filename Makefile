@@ -14,7 +14,11 @@ test: PhysicalNumberTest.o PhysicalNumber.o
 
 PhysicalNumber.o: PhysicalNumber.h 
 
+<<<<<<< HEAD
 PhysicalNumberDemo.o: PhysicalNumber.h
+=======
+PhysicalNumberDemo.o: PhysicalNumber.h 
+>>>>>>> d0e3a8c0a2f7e980f0fe790fd385166d58df0477
 
 PhysicalNumberTest.o: PhysicalNumber.h badkan.hpp
 
