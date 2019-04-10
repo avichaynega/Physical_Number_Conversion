@@ -12,11 +12,11 @@ test: PhysicalNumberTest.o PhysicalNumber.o
 %.o: %.cpp
 	clang++-5.0 -std=c++17 --compile $< -o $@
 
-PhysicalNumber.o: PhysicalNumber.h Unit.h
+PhysicalNumber.o: PhysicalNumber.h 
 
-PhysicalNumberDemo.o: PhysicalNumber.h Unit.h
+PhysicalNumberDemo.o: PhysicalNumber.h 
 
-PhysicalNumberTest.o: PhysicalNumber.h Unit.h badkan.hpp
+PhysicalNumberTest.o: PhysicalNumber.h badkan.hpp
 
 clean:
 	rm -f *.o demo test
