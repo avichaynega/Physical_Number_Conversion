@@ -16,7 +16,11 @@ PhysicalNumber.o: PhysicalNumber.h
 
 PhysicalNumberDemo.o: PhysicalNumber.h 
 
-PhysicalNumberTest.o: PhysicalNumber.h  badkan.hpp
+<<<<<<< HEAD
+PhysicalNumberTest.o: PhysicalNumber.h badkan.hpp
+=======
+PhysicalNumberTest.o: PhysicalNumber.h badkan.hpp
+>>>>>>> cfea6b9bdfbf285c8f4db5c571682710d983533b
 
 clean:
 	rm -f *.o demo test
