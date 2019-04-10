@@ -372,6 +372,24 @@ PhysicalNumber::PhysicalNumber(double parameter,Unit unit){
 	}
 
 
+<<<<<<< HEAD
+    
+    PhysicalNumber PhysicalNumber::operator++(){
+	_parameter++;
+	return *this;
+	}
+
+    const PhysicalNumber PhysicalNumber::operator++(int postfix){
+	
+	PhysicalNumber save = *this;
+	cout << save << endl;
+	_parameter++;	
+	cout << _parameter << endl;
+	return save;
+}
+    PhysicalNumber PhysicalNumber::operator--(){return PhysicalNumber(2,Unit::KM);}
+    const PhysicalNumber PhysicalNumber::operator--(int postfix){return PhysicalNumber(2,Unit::KM);}
+=======
 
     PhysicalNumber PhysicalNumber::operator++(){return PhysicalNumber(2,Unit::KM)
     const PhysicalNumber PhysicalNumber::operator++(int postfix){return PhysicalNumber(2,Unit::KM);}
@@ -386,6 +404,7 @@ PhysicalNumber::PhysicalNumber(double parameter,Unit unit){
 	_parameter--;
 	return (copy);
 	}
+>>>>>>> cfea6b9bdfbf285c8f4db5c571682710d983533b
 
 
 
