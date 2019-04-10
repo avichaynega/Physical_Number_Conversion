@@ -367,7 +367,20 @@ PhysicalNumber::PhysicalNumber(double parameter,Unit unit){
 	}
 	}
     istream&  operator>> (istream& is, PhysicalNumber& p){
+	
 	is >> p._parameter;
+	std::string str ;
+	is >> str;
+	
+	if ( str == "[kg]"){p._unit = Unit::KG;}
+	else if ( str == "[ton]"){p._unit = Unit::TON;}
+	else if ( str == "[g]"){p._unit = Unit::G;}
+	else if ( str == "[cm]"){p._unit = Unit::CM;}
+	else if ( str == "[m]"){p._unit = Unit::M;}
+	else if ( str == "[km]"){p._unit = Unit::KM;}
+	else if ( str == "[sec]"){p._unit = Unit::SEC;}
+	else if ( str == "[min]"){p._unit = Unit::MIN;}
+	else p._unit = Unit::HOUR;
         return is;
 	}
 
