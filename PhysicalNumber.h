@@ -30,11 +30,11 @@ class PhysicalNumber {
     PhysicalNumber operator-=(const PhysicalNumber& other) ;
 
     bool operator!() const;
-    bool operator<(const PhysicalNumber& p);
-    bool operator>(const PhysicalNumber& p);
+    bool operator<(const PhysicalNumber& p) const;
+    bool operator>(const PhysicalNumber& p)const;
     bool operator<=(const PhysicalNumber& p);     	
     bool operator>=(const PhysicalNumber& p); 
-    bool operator==(const PhysicalNumber& p);
+    bool operator==(const PhysicalNumber& p)const;
 
 
     

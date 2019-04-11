@@ -17,6 +17,12 @@ PhysicalNumber::PhysicalNumber(double parameter,Unit unit){
     const PhysicalNumber PhysicalNumber::operator-()const{return PhysicalNumber(-this->_parameter,this->_unit);}
     
     
+
+
+
+
+
+
     const PhysicalNumber PhysicalNumber::operator+(const PhysicalNumber& p)const{
     if(this->_unit == Unit::KM || this->_unit == Unit::M || this->_unit == Unit::CM){
     switch (p._unit)
@@ -190,7 +196,7 @@ PhysicalNumber::PhysicalNumber(double parameter,Unit unit){
 	return false;}
 	}
 ////////////////////////////////////////////////////////////
-    bool PhysicalNumber::operator<(const PhysicalNumber& p){
+    bool PhysicalNumber::operator<(const PhysicalNumber& p) const{
 		if(this->_unit == Unit::KM || this->_unit == Unit::M || this->_unit == Unit::CM){
     switch (p._unit)
     {
@@ -266,7 +272,7 @@ PhysicalNumber::PhysicalNumber(double parameter,Unit unit){
 	throw std::invalid_argument("different dimentions");
 	}
 ////////////////////////////////////////////////////////////////////////////
-    bool PhysicalNumber::operator>(const PhysicalNumber& p){
+    bool PhysicalNumber::operator>(const PhysicalNumber& p) const{
     return !(this->operator<(p))&& !(this->operator==(p));
 	} 
 /////////////////////////////////////////////////////////////////////////////
@@ -278,7 +284,7 @@ PhysicalNumber::PhysicalNumber(double parameter,Unit unit){
 	return (this->operator>(p)|| this-> operator==(p));
 	}
 ////////////////////////////////////////////////////////////////////////////// 
-    bool PhysicalNumber::operator==(const PhysicalNumber& p){
+    bool PhysicalNumber::operator==(const PhysicalNumber& p)const{
    if(this->_unit == Unit::KM || this->_unit == Unit::M || this->_unit == Unit::CM){
     switch (p._unit)
     {

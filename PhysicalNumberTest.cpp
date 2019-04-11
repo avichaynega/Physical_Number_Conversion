@@ -19,23 +19,25 @@ int main() {
   int signal = setjmp(badkan::longjmp_buffer);
   if (signal == 0) {
 
-    // BASIC TESTS - DO NOT CHANGE
+    // BA
+//SIC TESTS - DO NOT CHANGE
     PhysicalNumber a(2, Unit::KM);
     PhysicalNumber b(300, Unit::M);
     PhysicalNumber c(2, Unit::HOUR);
     PhysicalNumber d(30, Unit::MIN);
-
+   
+ bool l = b+a > b ;
+cout << l <<"ckeckke" << endl;
     PhysicalNumber e(2.9, Unit::KM);
     PhysicalNumber f(34, Unit::M);
     PhysicalNumber g(25.6, Unit::HOUR);
-    PhysicalNumber h(13, Unit::MIN);
-
+    PhysicalNumber h(13, Unit::MIN); 
     testcase
     .setname("Basic output")
     .CHECK_OUTPUT(a, "2[km]")
     .CHECK_OUTPUT(b, "300[m]")
-
     .setname("Compatible dimensions")
+
     .CHECK_OUTPUT(b+a, "2300[m]")
     .CHECK_OUTPUT((a+=b), "2.3[km]")
     .CHECK_OUTPUT(a, "2.3[km]")
