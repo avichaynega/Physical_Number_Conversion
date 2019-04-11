@@ -420,7 +420,9 @@ PhysicalNumber::PhysicalNumber(double parameter,Unit unit){
 	}
 
 
-
+bool operator!=(const PhysicalNumber& p1,const PhysicalNumber& p2){
+	return !(p1.operator==(p2));
+}
 
 
 

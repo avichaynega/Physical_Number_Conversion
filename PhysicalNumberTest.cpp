@@ -26,8 +26,8 @@ int main() {
     PhysicalNumber c(2, Unit::HOUR);
     PhysicalNumber d(30, Unit::MIN);
    
- bool l = b+a > b ;
-cout << l <<"ckeckke" << endl;
+ bool l = b == b ;
+cout << l <<"  ckeckke" << endl;
     PhysicalNumber e(2.9, Unit::KM);
     PhysicalNumber f(34, Unit::M);
     PhysicalNumber g(25.6, Unit::HOUR);

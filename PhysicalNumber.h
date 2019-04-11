@@ -47,7 +47,7 @@ class PhysicalNumber {
 
     
     //friend bool operator==(const PhysicalNumber& c1, const PhysicalNumber& c2);
-    friend bool operator!=(const PhysicalNumber& c1, const PhysicalNumber& c2);
+   friend bool operator!=(const PhysicalNumber& p1,const PhysicalNumber& p2);
     
     friend ostream& operator<< (ostream& os, const PhysicalNumber& c);
    friend istream& operator>> (istream& is, PhysicalNumber& c);
