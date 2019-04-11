@@ -384,10 +384,10 @@ PhysicalNumber::PhysicalNumber(double parameter,Unit unit){
 	//////////////////////////
     istream&  operator>> (istream& is, PhysicalNumber& p){
 	 cout<<">>"<<endl; 
-	   std::istringstream temp (is);
+	   std::stringstream temp <<is.rdbuf()<<endl;
 	int a;	
 	is >> a;
-	  if (a==999){  cout<<"**999"<<endl;}  
+	 
 	if(a>=0){
 		p._parameter = a;
 }
@@ -408,10 +408,8 @@ PhysicalNumber::PhysicalNumber(double parameter,Unit unit){
 		 p._unit = Unit::HOUR;
 }
 	if (p._parameter==200&&p._unit==Unit::G){ 
-		std::string s
-		is>>s;
 		cout<<"***************"<<endl;
-		cout<<s<<endl;
+		cout<<temp<<endl;
 
 }
         return is;
