@@ -373,8 +373,11 @@ PhysicalNumber::PhysicalNumber(double parameter,Unit unit){
 	}
 	}
     istream&  operator>> (istream& is, PhysicalNumber& p){
-	
-	is >> p._parameter;
+	int a;	
+	is >> a;
+	if(a>=0){
+		p._parameter = a;
+}
 	std::string str ;
 	is >> str;
 	for(int i=0;i<str.length();i++){
@@ -388,10 +391,12 @@ PhysicalNumber::PhysicalNumber(double parameter,Unit unit){
 	else if ( str == "[km]"){p._unit = Unit::KM;}
 	else if ( str == "[sec]"){p._unit = Unit::SEC;}
 	else if ( str == "[min]"){p._unit = Unit::MIN;}
-	else if( str == "[hour]")
+	else if( str == "[hour]"){
 		 p._unit = Unit::HOUR;
-	else
-		throw std::invalid_argument("Invalid dimention");	
+}
+	else}
+		throw std::invalid_argument("Invalid dimention");
+}	
         return is;
 	}
 
