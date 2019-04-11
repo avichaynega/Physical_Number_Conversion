@@ -388,7 +388,10 @@ PhysicalNumber::PhysicalNumber(double parameter,Unit unit){
 	else if ( str == "[km]"){p._unit = Unit::KM;}
 	else if ( str == "[sec]"){p._unit = Unit::SEC;}
 	else if ( str == "[min]"){p._unit = Unit::MIN;}
-	else p._unit = Unit::HOUR;
+	else if( str == "[hour]")
+		 p._unit = Unit::HOUR;
+	else
+		throw std::invalid_argument("Invalid dimention");	
         return is;
 	}
 
