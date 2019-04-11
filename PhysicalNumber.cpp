@@ -377,7 +377,9 @@ PhysicalNumber::PhysicalNumber(double parameter,Unit unit){
 	is >> p._parameter;
 	std::string str ;
 	is >> str;
-	
+	for(int i=0;i<str.length();i++){
+	str[i]=tolower(str[i]);
+	}
 	if ( str == "[kg]"){p._unit = Unit::KG;}
 	else if ( str == "[ton]"){p._unit = Unit::TON;}
 	else if ( str == "[g]"){p._unit = Unit::G;}

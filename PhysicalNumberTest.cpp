@@ -19,15 +19,14 @@ int main() {
   int signal = setjmp(badkan::longjmp_buffer);
   if (signal == 0) {
 
-    // BA
-//SIC TESTS - DO NOT CHANGE
+    // BASIC TESTS - DO NOT CHANGE
     PhysicalNumber a(2, Unit::KM);
     PhysicalNumber b(300, Unit::M);
     PhysicalNumber c(2, Unit::HOUR);
     PhysicalNumber d(30, Unit::MIN);
-   
- bool l = b == b ;
-cout << l <<"  ckeckke" << endl;
+
+istringstream("700[G]") >> a;
+	cout << a << endl;
     PhysicalNumber e(2.9, Unit::KM);
     PhysicalNumber f(34, Unit::M);
     PhysicalNumber g(25.6, Unit::HOUR);
