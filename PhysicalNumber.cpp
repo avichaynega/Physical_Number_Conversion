@@ -1,4 +1,3 @@
-
 #include <iostream>
 #include <sstream>
 #include <stdexcept>
@@ -376,28 +375,19 @@ PhysicalNumber::PhysicalNumber(double parameter,Unit unit){
 	}
 	//////////////////////////
     istream&  operator>> (istream& is, PhysicalNumber& p){
-	std::string str2;
+	is >> p._parameter ;
+
+	std::string str;
 	char c;
 	c = is.get();
-	while (is && (c >= 48 && c<=57) )
+	while (is)
 	{
-		str2 +=c;
-   		    //is.get() >> p._parameter;
+		str +=c;
+   		    
 		    c = is.get();
 	}
 
-	 if(str2 != " "){ p._parameter = stod(str2);}
-	else{throw std::invalid_argument("invalid input");}
-
-	//double a;	
-	//is >> a;
-	//p._parameter = a;
-	//cout << p._parameter << "p._parameter"<<endl;
-	std::string str ;
-	str+=c;
-
-	is >> str;
-	str = c+str;
+	
 	for(int i=0;i<str.length();i++){
 		if (str[0]!= '['){throw std::invalid_argument("invalid input");}
 		str[i]=tolower(str[i]);
