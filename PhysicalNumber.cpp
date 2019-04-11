@@ -377,6 +377,13 @@ PhysicalNumber::PhysicalNumber(double parameter,Unit unit){
     istream&  operator>> (istream& is, PhysicalNumber& p){
 	//std::stringstream temp;
 	//temp<<is.rdbuf()<<endl;
+	    char c;
+	c = is.get();
+	while (is)
+	{
+   	 std::cout << c  << endl;
+		    c = is.get();
+	}
 	double a;	
 	is >> a;
 	p._parameter = a;
