@@ -192,7 +192,6 @@ PhysicalNumber::PhysicalNumber(double parameter,Unit unit){
 	return true;
 	}
 	else {
-	cout<<"parameter isnt 0"<<endl;
 	return false;}
 	}
 ////////////////////////////////////////////////////////////
@@ -394,9 +393,7 @@ PhysicalNumber::PhysicalNumber(double parameter,Unit unit){
 	else if( str == "[hour]"){
 		 p._unit = Unit::HOUR;
 }
-	else{
-		throw std::invalid_argument("Invalid dimention");
-}	
+	
         return is;
 	}
 
@@ -411,9 +408,7 @@ PhysicalNumber::PhysicalNumber(double parameter,Unit unit){
     const PhysicalNumber PhysicalNumber::operator++(int postfix){
 	
 	PhysicalNumber save = *this;
-	cout << save << endl;
 	_parameter++;	
-	cout << _parameter << endl;
 	return save;
 }
 
