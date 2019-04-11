@@ -388,10 +388,7 @@ PhysicalNumber::PhysicalNumber(double parameter,Unit unit){
 	   temp<<is.rdbuf()<<endl;
 	double a;	
 	is >> a;
-	 
-	if(a>=0){
-		p._parameter = a;
-}
+	p._parameter = a;
 	std::string str ;
 	is >> str;
 	for(int i=0;i<str.length();i++){
