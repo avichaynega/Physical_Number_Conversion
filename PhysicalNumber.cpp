@@ -378,13 +378,14 @@ PhysicalNumber::PhysicalNumber(double parameter,Unit unit){
 	std::string str2;
 	char c;
 	c = is.get();
-	while (is && (c >= 48 && c<=57) )
+	while (is )
 	{
 		str2 +=c;
    		    //is.get() >> p._parameter;
 		    c = is.get();
+		cout << c ;
 	}
-
+	cout << ",";
 	 if(str2 != " "){ p._parameter = stod(str2);}
 	else{throw std::invalid_argument("invalid input");}
 
