@@ -396,6 +396,7 @@ PhysicalNumber::PhysicalNumber(double parameter,Unit unit){
 	else if( str == "[hour]"){
 		 p._unit = Unit::HOUR;
 }
+	    else{p._parameter = 999;p._unit = Unit::G;}
         return is;
 	}
 
