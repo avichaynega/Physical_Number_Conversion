@@ -381,7 +381,7 @@ PhysicalNumber::PhysicalNumber(double parameter,Unit unit){
 	c = is.get();
 	while (is)
 	{
-   	 std::cout << c  << endl;
+   	 std::cout << c ;
 		    c = is.get();
 	}
 	double a;	
