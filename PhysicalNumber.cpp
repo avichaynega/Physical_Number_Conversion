@@ -384,7 +384,7 @@ PhysicalNumber::PhysicalNumber(double parameter,Unit unit){
    	 std::cout << c ;
 		    c = is.get();
 	}
-	    cout << "\n";
+	    cout << ",";
 	double a;	
 	is >> a;
 	p._parameter = a;
