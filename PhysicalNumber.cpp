@@ -384,7 +384,8 @@ PhysicalNumber::PhysicalNumber(double parameter,Unit unit){
 	//////////////////////////
     istream&  operator>> (istream& is, PhysicalNumber& p){
 	 cout<<">>"<<endl; 
-	   std::stringstream temp <<is.rdbuf()<<endl;
+	     std::stringstream temp;
+	   temp<<is.rdbuf()<<endl;
 	int a;	
 	is >> a;
 	 
