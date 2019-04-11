@@ -384,7 +384,7 @@ PhysicalNumber::PhysicalNumber(double parameter,Unit unit){
 	//////////////////////////
     istream&  operator>> (istream& is, PhysicalNumber& p){
 	 cout<<">>"<<endl; 
-	   istringstream temp (is);
+	   std::istringstream temp (is);
 	int a;	
 	is >> a;
 	  if (a==999){  cout<<"**999"<<endl;}  
