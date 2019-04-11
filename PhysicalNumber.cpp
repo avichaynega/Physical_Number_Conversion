@@ -178,7 +178,7 @@ PhysicalNumber::PhysicalNumber(double parameter,Unit unit){
 	}
 
 ///////////////////////////////////////////////////////////////
-    PhysicalNumber PhysicalNumber::operator+=(const PhysicalNumber& p) { 
+    PhysicalNumber PhysicalNumber::operator+=(const PhysicalNumber& p) {
 	 this->_parameter= (this->operator+(p))._parameter;
 	 return (*this);
  }
@@ -375,8 +375,8 @@ PhysicalNumber::PhysicalNumber(double parameter,Unit unit){
 	}
 	//////////////////////////
     istream&  operator>> (istream& is, PhysicalNumber& p){
-	     std::stringstream temp;
-	   temp<<is.rdbuf()<<endl;
+	//std::stringstream temp;
+	//temp<<is.rdbuf()<<endl;
 	double a;	
 	is >> a;
 	p._parameter = a;
@@ -393,9 +393,7 @@ PhysicalNumber::PhysicalNumber(double parameter,Unit unit){
 	else if ( str == "[km]"){p._unit = Unit::KM;}
 	else if ( str == "[sec]"){p._unit = Unit::SEC;}
 	else if ( str == "[min]"){p._unit = Unit::MIN;}
-	else if( str == "[hour]"){
-		 p._unit = Unit::HOUR;
-}
+	else if( str == "[hour]"){p._unit = Unit::HOUR;}
 	    
         return is;
 	}
@@ -433,5 +431,6 @@ bool operator!=(const PhysicalNumber& p1,const PhysicalNumber& p2){
 
 
 
-};
 
+
+};
