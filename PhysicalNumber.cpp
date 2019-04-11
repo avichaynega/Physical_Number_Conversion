@@ -362,15 +362,15 @@ PhysicalNumber::PhysicalNumber(double parameter,Unit unit){
 	/////////////////////////////////
     ostream& operator<<(ostream& os, const PhysicalNumber& p){
 	switch(p._unit){
-	case Unit::KM : return os <<p._parameter<<"[km]"<<endl ;
-	case Unit::M :return os <<p._parameter<<"[m]"<<endl ; 
-	case Unit::CM :return os <<p._parameter<<"[cm]"<<endl ; 
-	case Unit::G :return os <<p._parameter<<"[g]"<<endl ; 
-	case Unit::KG :return os <<p._parameter<<"[kg]"<<endl ; 
-	case Unit::TON :return os <<p._parameter<<"[ton]"<<endl;
-	case Unit::SEC :return os <<p._parameter<<"[sec]"<<endl;
-	case Unit::MIN :return os <<p._parameter<<"[min]"<<endl;
-	case Unit::HOUR:return os <<p._parameter<<"[hour]"<<endl;
+	case Unit::KM : return os <<p._parameter<<"[km]";
+	case Unit::M :return os <<p._parameter<<"[m]" ; 
+	case Unit::CM :return os <<p._parameter<<"[cm]"; 
+	case Unit::G :return os <<p._parameter<<"[g]" ; 
+	case Unit::KG :return os <<p._parameter<<"[kg]" ; 
+	case Unit::TON :return os <<p._parameter<<"[ton]";
+	case Unit::SEC :return os <<p._parameter<<"[sec]";
+	case Unit::MIN :return os <<p._parameter<<"[min]";
+	case Unit::HOUR:return os <<p._parameter<<"[hour]";
 	}
 	}
 	//////////////////////////
