@@ -407,7 +407,7 @@ PhysicalNumber::PhysicalNumber(double parameter,Unit unit){
 	return *this;
 	}
 	//////////////////////////////
-    const PhysicalNumber PhysicalNumber::operator++(int postfix){
+    PhysicalNumber PhysicalNumber::operator++(int postfix){
 	PhysicalNumber save = *this;
 	_parameter++;	
 	return save;
@@ -419,7 +419,7 @@ PhysicalNumber::PhysicalNumber(double parameter,Unit unit){
 	return (*this);
 	}
 ////////////////////////////////////////////////a--///////////////////////////////
-    const PhysicalNumber PhysicalNumber::operator--(int postfix){
+     PhysicalNumber PhysicalNumber::operator--(int postfix){
 	PhysicalNumber copy=*this;
 	_parameter--;
 	return (copy);
