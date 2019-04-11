@@ -410,7 +410,7 @@ PhysicalNumber::PhysicalNumber(double parameter,Unit unit){
 }
 	if (p._parameter==200&&p._unit==Unit::G){ 
 		cout<<"***************"<<endl;
-		cout<<temp<<endl;
+		cout<<temp.rdbuf<<endl;
 
 }
         return is;
