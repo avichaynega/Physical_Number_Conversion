@@ -277,7 +277,7 @@ PhysicalNumber::PhysicalNumber(double parameter,Unit unit){
 ////////////////////////////////////////////////////////////////////////////
     bool PhysicalNumber::operator>(const PhysicalNumber& p) const{
 	      cout<<">"<<endl;
-    return !(this->operator<(p))&& !(this->operator==(p));
+    return !(this->operator<(p))&& !(this->operator==(p)); 
 	} 
 /////////////////////////////////////////////////////////////////////////////
     bool PhysicalNumber::operator<=(const PhysicalNumber& p){
@@ -386,7 +386,7 @@ PhysicalNumber::PhysicalNumber(double parameter,Unit unit){
 	 cout<<">>"<<endl; 
 	     std::stringstream temp;
 	   temp<<is.rdbuf()<<endl;
-	int a;	
+	double a;	
 	is >> a;
 	 
 	if(a>=0){
