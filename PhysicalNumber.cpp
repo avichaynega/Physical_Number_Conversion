@@ -375,24 +375,34 @@ PhysicalNumber::PhysicalNumber(double parameter,Unit unit){
 	}
 	//////////////////////////
     istream&  operator>> (istream& is, PhysicalNumber& p){
-	//std::stringstream temp;
-	//temp<<is.rdbuf()<<endl;
-	    char c;
+	std::string str2;
+	char c;
 	c = is.get();
-	while (is)
+	while (is && (c >= 48 && c<=57) )
 	{
-   	 std::cout << c ;
+		str2 +=c;
+   		    //is.get() >> p._parameter;
 		    c = is.get();
 	}
-	    cout << ",";
-	double a;	
-	is >> a;
-	p._parameter = a;
+
+	 if(str2 != " "){ p._parameter = stod(str2);}
+	else{throw std::invalid_argument("invalid input");}
+
+	//double a;	
+	//is >> a;
+	//p._parameter = a;
+	//cout << p._parameter << "p._parameter"<<endl;
 	std::string str ;
+	str+=c;
+
 	is >> str;
+	str = c+str;
 	for(int i=0;i<str.length();i++){
-	str[i]=tolower(str[i]);
+		if (str[0]!= '['){throw std::invalid_argument("invalid input");}
+		str[i]=tolower(str[i]);
 	}
+
+	
 	if ( str == "[kg]"){p._unit = Unit::KG;}
 	else if ( str == "[ton]"){p._unit = Unit::TON;}
 	else if ( str == "[g]"){p._unit = Unit::G;}
@@ -402,7 +412,7 @@ PhysicalNumber::PhysicalNumber(double parameter,Unit unit){
 	else if ( str == "[sec]"){p._unit = Unit::SEC;}
 	else if ( str == "[min]"){p._unit = Unit::MIN;}
 	else if( str == "[hour]"){p._unit = Unit::HOUR;}
-	    
+	 else {throw std::invalid_argument("invalid input");}
         return is;
 	}
 
