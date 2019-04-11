@@ -375,24 +375,25 @@ PhysicalNumber::PhysicalNumber(double parameter,Unit unit){
 	}
 	//////////////////////////
     istream&  operator>> (istream& is, PhysicalNumber& p){
-	//std::stringstream temp;
-	//temp<<is.rdbuf()<<endl;
-	    char c;
+	is >> p._parameter ;
+
+	std::string str;
+	char c;
 	c = is.get();
 	while (is)
 	{
-   	 std::cout << c ;
+		str +=c;
+   		    
 		    c = is.get();
 	}
-	    cout << ",";
-	double a;	
-	is >> a;
-	p._parameter = a;
-	std::string str ;
-	is >> str;
+
+	
 	for(int i=0;i<str.length();i++){
-	str[i]=tolower(str[i]);
+		if (str[0]!= '['){throw std::invalid_argument("invalid input");}
+		str[i]=tolower(str[i]);
 	}
+
+	
 	if ( str == "[kg]"){p._unit = Unit::KG;}
 	else if ( str == "[ton]"){p._unit = Unit::TON;}
 	else if ( str == "[g]"){p._unit = Unit::G;}
@@ -402,7 +403,7 @@ PhysicalNumber::PhysicalNumber(double parameter,Unit unit){
 	else if ( str == "[sec]"){p._unit = Unit::SEC;}
 	else if ( str == "[min]"){p._unit = Unit::MIN;}
 	else if( str == "[hour]"){p._unit = Unit::HOUR;}
-	    
+	 else {throw std::invalid_argument("invalid input");}
         return is;
 	}
 
