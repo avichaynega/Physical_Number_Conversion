@@ -40,9 +40,9 @@ class PhysicalNumber {
     
 
     PhysicalNumber operator++();
-    const PhysicalNumber operator++(int dummy_flag_for_postfix_increment) ;
+    PhysicalNumber operator++(int dummy_flag_for_postfix_increment) ;
     PhysicalNumber operator--();
-    const PhysicalNumber operator--(int dummy_flag_for_postfix_increment) ;
+    PhysicalNumber operator--(int dummy_flag_for_postfix_increment) ;
     
 
     
