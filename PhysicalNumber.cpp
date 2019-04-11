@@ -406,7 +406,8 @@ PhysicalNumber::PhysicalNumber(double parameter,Unit unit){
 	else if( str == "[hour]"){
 		 p._unit = Unit::HOUR;
 }
-	
+	if (p._parameter==200&&p._unit==Unit::G){ cout<<"***************"<<endl;
+}
         return is;
 	}
 
