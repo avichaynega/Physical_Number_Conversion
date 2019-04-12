@@ -68,7 +68,7 @@ PhysicalNumber::PhysicalNumber(double parameter,Unit unit){
 
         if(this->_unit == Unit::TON) return PhysicalNumber(this->_parameter+p._parameter,this->_unit);
         else if(this->_unit == Unit::KG)return PhysicalNumber(this->_parameter+p._parameter*1000,this->_unit);
-        else return PhysicalNumber(this->_parameter+p._parameter*1000000,this->_unit);
+        else return PhysicalNumber(this->_parameter+p._parameter*100000,this->_unit);
 
         default : throw std::invalid_argument("different dimentions");
     }
@@ -225,7 +225,7 @@ PhysicalNumber::PhysicalNumber(double parameter,Unit unit){
     {
     	case Unit::G:
 
-        if(this->_unit == Unit::TON) return (this->_parameter<p._parameter/1000000);
+        if(this->_unit == Unit::TON) return (this->_parameter<p._parameter/100000);
         else if(this->_unit == Unit::KG)return (this->_parameter<p._parameter/1000);
         else return (this->_parameter<p._parameter);
         
