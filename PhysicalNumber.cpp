@@ -445,7 +445,7 @@ PhysicalNumber::PhysicalNumber(double parameter,Unit unit){
 	cout<<"2"<<endl;
 	PhysicalNumber save = *this;
 	_parameter++;	
-	return save;
+	return *this;
 }
 
 ////////////////////////////////////////////////--a////////////////////////////
