@@ -435,7 +435,7 @@ PhysicalNumber::PhysicalNumber(double parameter,Unit unit){
     ///////////////////////////////
 	//this method defines the operator++
     PhysicalNumber PhysicalNumber::operator++(){
-	    if (_parameter == 10802 || _parameter == 10801)
+	    if (_parameter == 10802 )
 	 	cout<<"1"<<endl;
 	_parameter++;
 	return *this;
