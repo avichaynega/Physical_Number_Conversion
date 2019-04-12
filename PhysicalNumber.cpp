@@ -79,8 +79,8 @@ PhysicalNumber::PhysicalNumber(double parameter,Unit unit){
 
  if(this->_unit == Unit::SEC || this->_unit == Unit::MIN || this->_unit == Unit::HOUR){
 	 cout<<"********"<<endl;
-	  cout<<this->_parameter<< "+"<< p._parameter<<p._unit<<endl;
-
+	  cout<<this->_parameter<< "+"<< p._parameter<<endl;
+      cout<<p._unit<<endl;
 	 
     switch (p._unit)
     {
