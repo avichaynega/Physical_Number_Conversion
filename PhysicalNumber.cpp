@@ -97,7 +97,7 @@ PhysicalNumber::PhysicalNumber(double parameter,Unit unit){
 	  cout<<this->_parameter<< "+"<< p._parameter<<endl;
       cout<<"min"<<endl;
         if(this->_unit == Unit::SEC) return PhysicalNumber(this->_parameter+p._parameter*60,this->_unit);
-        else if(this->_unit == Unit::M)return PhysicalNumber(this->_parameter+p._parameter,this->_unit);
+        else if(this->_unit == Unit::MIN)return PhysicalNumber(this->_parameter+p._parameter,this->_unit);
         else return PhysicalNumber(this->_parameter+p._parameter/60,this->_unit);
 
 	case Unit::HOUR:
@@ -181,7 +181,7 @@ PhysicalNumber::PhysicalNumber(double parameter,Unit unit){
     	case Unit::MIN:
 
         if(this->_unit == Unit::SEC) return PhysicalNumber(this->_parameter-p._parameter*60,this->_unit);
-        else if(this->_unit == Unit::M)return PhysicalNumber(this->_parameter-p._parameter,this->_unit);
+        else if(this->_unit == Unit::MIN)return PhysicalNumber(this->_parameter-p._parameter,this->_unit);
         else return PhysicalNumber(this->_parameter-p._parameter/60,this->_unit);
 
 	case Unit::HOUR:
@@ -283,7 +283,7 @@ PhysicalNumber::PhysicalNumber(double parameter,Unit unit){
     	case Unit::MIN:
 
         if(this->_unit == Unit::SEC) return (this->_parameter<p._parameter*60);
-        else if(this->_unit == Unit::M)return (this->_parameter<p._parameter);
+        else if(this->_unit == Unit::MIN)return (this->_parameter<p._parameter);
         else return (this->_parameter < p._parameter/60);
 
 	case Unit::HOUR:
@@ -381,7 +381,7 @@ PhysicalNumber::PhysicalNumber(double parameter,Unit unit){
     	case Unit::MIN:
 
         if(this->_unit == Unit::SEC) return (this->_parameter==p._parameter*60);
-        else if(this->_unit == Unit::M)return (this->_parameter==p._parameter);
+        else if(this->_unit == Unit::MIN)return (this->_parameter==p._parameter);
         else return (this->_parameter == p._parameter/60);
 
 	case Unit::HOUR:
