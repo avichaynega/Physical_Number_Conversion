@@ -56,7 +56,7 @@ PhysicalNumber::PhysicalNumber(double parameter,Unit unit){
     {	
     	case Unit::G:
 
-        if(this->_unit == Unit::TON) return PhysicalNumber(this->_parameter+p._parameter/100000,this->_unit);
+        if(this->_unit == Unit::TON) return PhysicalNumber(this->_parameter+p._parameter/1000000,this->_unit);
         else if(this->_unit == Unit::KG)return PhysicalNumber(this->_parameter+p._parameter/1000,this->_unit);
         else return PhysicalNumber(this->_parameter+p._parameter,this->_unit);
         
@@ -70,7 +70,7 @@ PhysicalNumber::PhysicalNumber(double parameter,Unit unit){
 
         if(this->_unit == Unit::TON) return PhysicalNumber(this->_parameter+p._parameter,this->_unit);
         else if(this->_unit == Unit::KG)return PhysicalNumber(this->_parameter+p._parameter*1000,this->_unit);
-        else return PhysicalNumber(this->_parameter+p._parameter*100000,this->_unit);
+        else return PhysicalNumber(this->_parameter+p._parameter*1000000,this->_unit);
 	// if the other number isnt represent wegghit, throw an exception
 
         default : throw std::invalid_argument("different dimentions");
@@ -118,14 +118,14 @@ PhysicalNumber::PhysicalNumber(double parameter,Unit unit){
     	case Unit::CM:
 
         if(this->_unit == Unit::KM) return PhysicalNumber(this->_parameter-p._parameter/100000,this->_unit);
-        else if(this->_unit == Unit::M)return PhysicalNumber(this->_parameter-p._parameter/1000,this->_unit);
+        else if(this->_unit == Unit::M)return PhysicalNumber(this->_parameter-p._parameter/100,this->_unit);
         else return PhysicalNumber(this->_parameter-p._parameter,this->_unit);
         
     	case Unit::M:
 
         if(this->_unit == Unit::KM) return PhysicalNumber(this->_parameter-p._parameter/1000,this->_unit);
         else if(this->_unit == Unit::M)return PhysicalNumber(this->_parameter-p._parameter,this->_unit);
-        else return PhysicalNumber(this->_parameter-p._parameter*1000,this->_unit);
+        else return PhysicalNumber(this->_parameter-p._parameter*100,this->_unit);
 
 	case Unit::KM:
 
@@ -143,7 +143,7 @@ PhysicalNumber::PhysicalNumber(double parameter,Unit unit){
 		    //calculate the result for eaach unit
     	case Unit::G:
 
-        if(this->_unit == Unit::TON) return PhysicalNumber(this->_parameter-p._parameter/100000,this->_unit);
+        if(this->_unit == Unit::TON) return PhysicalNumber(this->_parameter-p._parameter/1000000,this->_unit);
         else if(this->_unit == Unit::KG)return PhysicalNumber(this->_parameter-p._parameter/1000,this->_unit);
         else return PhysicalNumber(this->_parameter-p._parameter,this->_unit);
         
@@ -157,7 +157,7 @@ PhysicalNumber::PhysicalNumber(double parameter,Unit unit){
 
         if(this->_unit == Unit::TON) return PhysicalNumber(this->_parameter-p._parameter,this->_unit);
         else if(this->_unit == Unit::KG)return PhysicalNumber(this->_parameter-p._parameter*1000,this->_unit);
-        else return PhysicalNumber(this->_parameter-p._parameter*100000,this->_unit);
+        else return PhysicalNumber(this->_parameter-p._parameter*1000000,this->_unit);
 	// if its not the same type throw an exception
         default : throw std::invalid_argument("different dimentions");
     }
@@ -223,7 +223,7 @@ PhysicalNumber::PhysicalNumber(double parameter,Unit unit){
     	case Unit::CM:
 
         if(this->_unit == Unit::KM) return (this->_parameter<p._parameter/100000);
-        else if(this->_unit == Unit::M)return (this->_parameter<p._parameter/1000);
+        else if(this->_unit == Unit::M)return (this->_parameter<p._parameter/100);
         else return (this->_parameter<p._parameter);
         
     	case Unit::M:
@@ -246,7 +246,7 @@ PhysicalNumber::PhysicalNumber(double parameter,Unit unit){
     {// calculate the result
     	case Unit::G:
 
-        if(this->_unit == Unit::TON) return (this->_parameter<p._parameter/100000);
+        if(this->_unit == Unit::TON) return (this->_parameter<p._parameter/1000000);
         else if(this->_unit == Unit::KG)return (this->_parameter<p._parameter/1000);
         else return (this->_parameter<p._parameter);
         
@@ -260,7 +260,7 @@ PhysicalNumber::PhysicalNumber(double parameter,Unit unit){
 
         if(this->_unit == Unit::TON) return (this->_parameter<p._parameter);
         else if(this->_unit == Unit::KG)return (this->_parameter<p._parameter*1000);
-        else return (this->_parameter<p._parameter*100000);
+        else return (this->_parameter<p._parameter*1000000);
 //if the types dont match throw an exception
         default : throw std::invalid_argument("different dimentions");
     }
@@ -319,7 +319,7 @@ PhysicalNumber::PhysicalNumber(double parameter,Unit unit){
     	case Unit::CM:
 	//calculate the result
         if(this->_unit == Unit::KM) return (this->_parameter==p._parameter/100000);
-        else if(this->_unit == Unit::M)return (this->_parameter==p._parameter/1000);
+        else if(this->_unit == Unit::M)return (this->_parameter==p._parameter/100);
         else return (this->_parameter==p._parameter);
         
     	case Unit::M:
@@ -342,7 +342,7 @@ PhysicalNumber::PhysicalNumber(double parameter,Unit unit){
     {
     	case Unit::G:
 	//calculate the result
-        if(this->_unit == Unit::TON) return (this->_parameter==p._parameter/100000);
+        if(this->_unit == Unit::TON) return (this->_parameter==p._parameter/1000000);
         else if(this->_unit == Unit::KG)return (this->_parameter==p._parameter/1000);
         else return (this->_parameter==p._parameter);
         
@@ -356,7 +356,7 @@ PhysicalNumber::PhysicalNumber(double parameter,Unit unit){
 
         if(this->_unit == Unit::TON) return (this->_parameter==p._parameter);
         else if(this->_unit == Unit::KG)return (this->_parameter==p._parameter*1000);
-        else return (this->_parameter==p._parameter*100000);
+        else return (this->_parameter==p._parameter*1000000);
 	//throw exception if the unit dont match
         default : throw std::invalid_argument("different dimentions");
     }
