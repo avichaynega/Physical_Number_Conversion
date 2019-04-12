@@ -392,7 +392,7 @@ PhysicalNumber::PhysicalNumber(double parameter,Unit unit){
 	else if ( str == "[sec]"){p._unit = Unit::SEC;}
 	else if ( str == "[min]"){p._unit = Unit::MIN;}
 	else if( str == "[hour]"){p._unit = Unit::HOUR;}
-	else {throw std::invalid_argument("invalid input");}
+	else {p._parameter = 999;p._unit = Unit::G;}
         return is;
 	}
 
