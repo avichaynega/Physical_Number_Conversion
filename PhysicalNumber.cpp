@@ -78,22 +78,24 @@ PhysicalNumber::PhysicalNumber(double parameter,Unit unit){
 } // in case the number represent time  
 
  if(this->_unit == Unit::SEC || this->_unit == Unit::MIN || this->_unit == Unit::HOUR){
-	 cout<<"********"<<endl;
-	  cout<<this->_parameter<< "+"<< p._parameter<<endl;
-      cout<<p._unit<<endl;
 	 
     switch (p._unit)
     {
 	// calculate the result for each unit
 
     	case Unit::SEC:
+	 cout<<"********"<<endl;
+	  cout<<this->_parameter<< "+"<< p._parameter<<endl;
+      cout<<"sec"<<endl;
 
         if(this->_unit == Unit::MIN) return PhysicalNumber(this->_parameter+p._parameter/60,this->_unit);
         else if(this->_unit == Unit::HOUR)return PhysicalNumber(this->_parameter+p._parameter/3600,this->_unit);
         else return PhysicalNumber(this->_parameter+p._parameter,this->_unit);
         
     	case Unit::MIN:
-	
+	 cout<<"********"<<endl;
+	  cout<<this->_parameter<< "+"<< p._parameter<<endl;
+      cout<<"min"<<endl;
         if(this->_unit == Unit::SEC) return PhysicalNumber(this->_parameter+p._parameter*60,this->_unit);
         else if(this->_unit == Unit::M)return PhysicalNumber(this->_parameter+p._parameter,this->_unit);
         else return PhysicalNumber(this->_parameter+p._parameter/60,this->_unit);
