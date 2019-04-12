@@ -31,14 +31,14 @@ PhysicalNumber::PhysicalNumber(double parameter,Unit unit){
     	case Unit::CM:
 
         if(this->_unit == Unit::KM) return PhysicalNumber(this->_parameter+p._parameter/100000,this->_unit);
-        else if(this->_unit == Unit::M)return PhysicalNumber(this->_parameter+p._parameter/1000,this->_unit);
+        else if(this->_unit == Unit::M)return PhysicalNumber(this->_parameter+p._parameter/100,this->_unit);
         else return PhysicalNumber(this->_parameter+p._parameter,this->_unit);
         
     	case Unit::M:
 
         if(this->_unit == Unit::KM) return PhysicalNumber(this->_parameter+p._parameter/1000,this->_unit);
         else if(this->_unit == Unit::M)return PhysicalNumber(this->_parameter+p._parameter,this->_unit);
-        else return PhysicalNumber(this->_parameter+p._parameter*1000,this->_unit);
+        else return PhysicalNumber(this->_parameter+p._parameter*100,this->_unit);
 
 	case Unit::KM:
 
@@ -209,7 +209,7 @@ PhysicalNumber::PhysicalNumber(double parameter,Unit unit){
 
         if(this->_unit == Unit::KM) return (this->_parameter<p._parameter/1000);
         else if(this->_unit == Unit::M)return (this->_parameter<p._parameter);
-        else return (this->_parameter < p._parameter*1000);
+        else return (this->_parameter < p._parameter*100);
 
 	case Unit::KM:
 
@@ -298,7 +298,7 @@ PhysicalNumber::PhysicalNumber(double parameter,Unit unit){
 
         if(this->_unit == Unit::KM) return (this->_parameter==p._parameter/1000);
         else if(this->_unit == Unit::M)return (this->_parameter==p._parameter);
-        else return (this->_parameter ==p._parameter*1000);
+        else return (this->_parameter ==p._parameter*100);
 
 	case Unit::KM:
 
