@@ -30,7 +30,7 @@ PhysicalNumber::PhysicalNumber(double parameter,Unit unit){
     {
     	case Unit::CM:
 
-        if(this->_unit == Unit::KM) return PhysicalNumber(this->_parameter+p._parameter/1000000,this->_unit);
+        if(this->_unit == Unit::KM) return PhysicalNumber(this->_parameter+p._parameter/100000,this->_unit);
         else if(this->_unit == Unit::M)return PhysicalNumber(this->_parameter+p._parameter/1000,this->_unit);
         else return PhysicalNumber(this->_parameter+p._parameter,this->_unit);
         
@@ -286,8 +286,6 @@ PhysicalNumber::PhysicalNumber(double parameter,Unit unit){
 ////////////////////////////////////////////////////////////////////////////// 
     bool PhysicalNumber::operator==(const PhysicalNumber& p)const{
    if(this->_unit == Unit::KM || this->_unit == Unit::M || this->_unit == Unit::CM){
-	   cout << "this  "<< *this << endl;
-	    cout << "pppp  "<< p<< endl;
     switch (p._unit)
     {
     	case Unit::CM:
