@@ -183,7 +183,7 @@ PhysicalNumber::PhysicalNumber(double parameter,Unit unit){
         if(this->_unit == Unit::HOUR) return PhysicalNumber(this->_parameter-p._parameter,this->_unit);
         else if(this->_unit == Unit::MIN)return PhysicalNumber(this->_parameter-p._parameter*60,this->_unit);
         else return PhysicalNumber(this->_parameter-p._parameter*3600,this->_unit);
-	/if the units isnt match throw an exceotion
+	//if the units isnt match throw an exceotion
         default : throw std::invalid_argument("different dimentions");
     }
 }else
