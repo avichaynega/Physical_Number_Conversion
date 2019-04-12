@@ -139,7 +139,7 @@ PhysicalNumber::PhysicalNumber(double parameter,Unit unit){
 
         if(this->_unit == Unit::TON) return PhysicalNumber(this->_parameter-p._parameter/1000,this->_unit);
         else if(this->_unit == Unit::KG)return PhysicalNumber(this->_parameter-p._parameter,this->_unit);
-        else return PhysicalNumber(this->_parameter- p._parameter*1000,this->_unit);
+        else return PhysicalNumber(this->_parameter-p._parameter*1000,this->_unit);
 
 	case Unit::TON:
 
