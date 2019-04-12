@@ -286,7 +286,7 @@ PhysicalNumber::PhysicalNumber(double parameter,Unit unit){
 ////////////////////////////////////////////////////////////////////////////// 
     bool PhysicalNumber::operator==(const PhysicalNumber& p)const{
    if(this->_unit == Unit::KM || this->_unit == Unit::M || this->_unit == Unit::CM){
-	   cout << "this  "<< this << endl;
+	   cout << "this  "<< *this << endl;
 	    cout << "pppp  "<< p<< endl;
     switch (p._unit)
     {
