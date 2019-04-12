@@ -6,7 +6,7 @@
 using namespace std;
 
 namespace ariel{
-
+//constructor
 PhysicalNumber::PhysicalNumber(double parameter,Unit unit){
 	_parameter = parameter;
 	_unit = unit;
@@ -22,12 +22,12 @@ PhysicalNumber::PhysicalNumber(double parameter,Unit unit){
 
 
 
-
+	// this method defines operator +
     const PhysicalNumber PhysicalNumber::operator+(const PhysicalNumber& p)const{
-	  
+	// in case the number represent distance  
     if(this->_unit == Unit::KM || this->_unit == Unit::M || this->_unit == Unit::CM){
     switch (p._unit)
-    {
+    {	// calculate the result for each unit
     	case Unit::CM:
 
         if(this->_unit == Unit::KM) return PhysicalNumber(this->_parameter+p._parameter/100000,this->_unit);
@@ -45,13 +45,15 @@ PhysicalNumber::PhysicalNumber(double parameter,Unit unit){
         if(this->_unit == Unit::KM) return PhysicalNumber(this->_parameter+p._parameter,this->_unit);
         else if(this->_unit == Unit::M)return PhysicalNumber(this->_parameter+p._parameter*1000,this->_unit);
         else return PhysicalNumber(this->_parameter+p._parameter*100000,this->_unit);
-
+	// if the other number isnt represent distance, thriw an exception
         default : throw std::invalid_argument("different dimentions");
     }
-}
+}	// in case the number represent weight  
+
      if(this->_unit == Unit::G || this->_unit == Unit::KG || this->_unit == Unit::TON){
     switch (p._unit)
-    {
+    	// calculate the result for each unit
+    {	
     	case Unit::G:
 
         if(this->_unit == Unit::TON) return PhysicalNumber(this->_parameter+p._parameter/100000,this->_unit);
@@ -69,13 +71,17 @@ PhysicalNumber::PhysicalNumber(double parameter,Unit unit){
         if(this->_unit == Unit::TON) return PhysicalNumber(this->_parameter+p._parameter,this->_unit);
         else if(this->_unit == Unit::KG)return PhysicalNumber(this->_parameter+p._parameter*1000,this->_unit);
         else return PhysicalNumber(this->_parameter+p._parameter*100000,this->_unit);
+	// if the other number isnt represent wegghit, throw an exception
 
         default : throw std::invalid_argument("different dimentions");
     }
-}
+} // in case the number represent time  
+
  if(this->_unit == Unit::SEC || this->_unit == Unit::MIN || this->_unit == Unit::HOUR){
     switch (p._unit)
     {
+	// calculate the result for each unit
+
     	case Unit::SEC:
 
         if(this->_unit == Unit::MIN) return PhysicalNumber(this->_parameter+p._parameter/60,this->_unit);
@@ -93,6 +99,7 @@ PhysicalNumber::PhysicalNumber(double parameter,Unit unit){
         if(this->_unit == Unit::HOUR) return PhysicalNumber(this->_parameter+p._parameter,this->_unit);
         else if(this->_unit == Unit::MIN)return PhysicalNumber(this->_parameter+p._parameter*60,this->_unit);
         else return PhysicalNumber(this->_parameter+p._parameter*3600,this->_unit);
+	// if the other number isnt represent time, throw an exception
 
         default : throw std::invalid_argument("different dimentions");
     }
@@ -100,11 +107,14 @@ PhysicalNumber::PhysicalNumber(double parameter,Unit unit){
 	throw std::invalid_argument("different dimentions");	
 }
 /////////////////////////////////////////////////////////////////////////////////////
+	//this method defines the operator -
     const PhysicalNumber PhysicalNumber::operator-(const PhysicalNumber& p) const{
-	    
+	    // in case the first physical number represent weight
 		if(this->_unit == Unit::KM || this->_unit == Unit::M || this->_unit == Unit::CM){
+		
     switch (p._unit)
     {
+	//calculating the result for each unit
     	case Unit::CM:
 
         if(this->_unit == Unit::KM) return PhysicalNumber(this->_parameter-p._parameter/100000,this->_unit);
@@ -122,13 +132,15 @@ PhysicalNumber::PhysicalNumber(double parameter,Unit unit){
         if(this->_unit == Unit::KM) return PhysicalNumber(this->_parameter-p._parameter,this->_unit);
         else if(this->_unit == Unit::M)return PhysicalNumber(this->_parameter-p._parameter*1000,this->_unit);
         else return PhysicalNumber(this->_parameter-p._parameter*100000,this->_unit);
-
+	// if it is not the same unit throw an exception
         default : throw std::invalid_argument("different dimentions");
     }
 }
+	    //case the number represent weight
      if(this->_unit == Unit::G || this->_unit == Unit::KG || this->_unit == Unit::TON){
     switch (p._unit)
     {
+		    //calculate the result for eaach unit
     	case Unit::G:
 
         if(this->_unit == Unit::TON) return PhysicalNumber(this->_parameter-p._parameter/100000,this->_unit);
@@ -146,13 +158,14 @@ PhysicalNumber::PhysicalNumber(double parameter,Unit unit){
         if(this->_unit == Unit::TON) return PhysicalNumber(this->_parameter-p._parameter,this->_unit);
         else if(this->_unit == Unit::KG)return PhysicalNumber(this->_parameter-p._parameter*1000,this->_unit);
         else return PhysicalNumber(this->_parameter-p._parameter*100000,this->_unit);
-
+	// if its not the same type throw an exception
         default : throw std::invalid_argument("different dimentions");
     }
 }
+	    // cAse the the number represent time 
  if(this->_unit == Unit::SEC || this->_unit == Unit::MIN || this->_unit == Unit::HOUR){
     switch (p._unit)
-    {
+    { //calculate the result for each unit
     	case Unit::SEC:
 
         if(this->_unit == Unit::MIN) return PhysicalNumber(this->_parameter-p._parameter/60,this->_unit);
@@ -170,7 +183,7 @@ PhysicalNumber::PhysicalNumber(double parameter,Unit unit){
         if(this->_unit == Unit::HOUR) return PhysicalNumber(this->_parameter-p._parameter,this->_unit);
         else if(this->_unit == Unit::MIN)return PhysicalNumber(this->_parameter-p._parameter*60,this->_unit);
         else return PhysicalNumber(this->_parameter-p._parameter*3600,this->_unit);
-
+	/if the units isnt match throw an exceotion
         default : throw std::invalid_argument("different dimentions");
     }
 }else
@@ -178,15 +191,20 @@ PhysicalNumber::PhysicalNumber(double parameter,Unit unit){
 	}
 
 ///////////////////////////////////////////////////////////////
+	//this method defines the operator +=
     PhysicalNumber PhysicalNumber::operator+=(const PhysicalNumber& p) {
 	 this->_parameter= (this->operator+(p))._parameter;
 	 return (*this);
  }
 ////////////////////////////////////////////////////////////////
+		//this method defines the operator -=
+
     PhysicalNumber PhysicalNumber::operator-=(const PhysicalNumber& p) {
 	 this->_parameter= (this->operator-(p))._parameter;
 	return (*this);}
 //////////////////////////////////////////////////////////////
+		//this method defines the operator !
+
     bool PhysicalNumber::operator!() const{
 	if(this->_parameter == 0){
 	return true;
@@ -195,8 +213,11 @@ PhysicalNumber::PhysicalNumber(double parameter,Unit unit){
 	return false;}
 	}
 ////////////////////////////////////////////////////////////
+	//this method defines the operator <
     bool PhysicalNumber::operator<(const PhysicalNumber& p) const{
+	    //first case the number represent distance
 		if(this->_unit == Unit::KM || this->_unit == Unit::M || this->_unit == Unit::CM){
+	//calculating hte result
     switch (p._unit)
     {
     	case Unit::CM:
@@ -216,13 +237,13 @@ PhysicalNumber::PhysicalNumber(double parameter,Unit unit){
         if(this->_unit == Unit::KM) return (this->_parameter<p._parameter);
         else if(this->_unit == Unit::M)return (this->_parameter<p._parameter*1000);
         else return (this->_parameter<p._parameter*100000);
-
+// if the types dont match throw an exception
         default : throw std::invalid_argument("different dimentions");
     }
-}
+}    // case the number represent weight
      if(this->_unit == Unit::G || this->_unit == Unit::KG || this->_unit == Unit::TON){
     switch (p._unit)
-    {
+    {// calculate the result
     	case Unit::G:
 
         if(this->_unit == Unit::TON) return (this->_parameter<p._parameter/100000);
@@ -240,15 +261,15 @@ PhysicalNumber::PhysicalNumber(double parameter,Unit unit){
         if(this->_unit == Unit::TON) return (this->_parameter<p._parameter);
         else if(this->_unit == Unit::KG)return (this->_parameter<p._parameter*1000);
         else return (this->_parameter<p._parameter*100000);
-
+//if the types dont match throw an exception
         default : throw std::invalid_argument("different dimentions");
     }
-}
+}// case the number represent time
  if(this->_unit == Unit::SEC || this->_unit == Unit::MIN || this->_unit == Unit::HOUR){
     switch (p._unit)
     {
     	case Unit::SEC:
-
+//calcuate the result
         if(this->_unit == Unit::MIN) return (this->_parameter<p._parameter/60);
         else if(this->_unit == Unit::HOUR)return (this->_parameter<p._parameter/3600);
         else return (this->_parameter<p._parameter);
@@ -264,32 +285,39 @@ PhysicalNumber::PhysicalNumber(double parameter,Unit unit){
         if(this->_unit == Unit::HOUR) return (this->_parameter<p._parameter);
         else if(this->_unit == Unit::MIN)return (this->_parameter<p._parameter*60);
         else return (this->_parameter<p._parameter*3600);
-
+// if the units dont match throw an exception
         default : throw std::invalid_argument("different dimentions");
     }
 }else
 	throw std::invalid_argument("different dimentions");
 	}
 ////////////////////////////////////////////////////////////////////////////
+	//this method defines the operator >
     bool PhysicalNumber::operator>(const PhysicalNumber& p) const{
     return !(this->operator<(p))&& !(this->operator==(p)); 
 	} 
 /////////////////////////////////////////////////////////////////////////////
+		//this method defines the operator <=
+
     bool PhysicalNumber::operator<=(const PhysicalNumber& p){
 
 		return (this->operator<(p)|| this-> operator==(p));}
-//////////////////////////////////////////////////////////////////////////////		    	
+//////////////////////////////////////////////////////////////////////////////
+		//this method defines the operator >=
     bool PhysicalNumber::operator>=(const PhysicalNumber& p){
 	      cout<<">="<<endl;
 	return (this->operator>(p)|| this-> operator==(p));
 	}
 ////////////////////////////////////////////////////////////////////////////// 
+		//this method defines the operator ==
+
     bool PhysicalNumber::operator==(const PhysicalNumber& p)const{
+	    //case the number represent distance
    if(this->_unit == Unit::KM || this->_unit == Unit::M || this->_unit == Unit::CM){
     switch (p._unit)
     {
     	case Unit::CM:
-
+	//calculate the result
         if(this->_unit == Unit::KM) return (this->_parameter==p._parameter/100000);
         else if(this->_unit == Unit::M)return (this->_parameter==p._parameter/1000);
         else return (this->_parameter==p._parameter);
@@ -305,15 +333,15 @@ PhysicalNumber::PhysicalNumber(double parameter,Unit unit){
         if(this->_unit == Unit::KM) return (this->_parameter==p._parameter);
         else if(this->_unit == Unit::M)return (this->_parameter==p._parameter*1000);
         else return (this->_parameter==p._parameter*100000);
-
+	//if the units dont match throw an exception
         default : throw std::invalid_argument("different dimentions");
     }
-}
+}	// case the number represent weight
      if(this->_unit == Unit::G || this->_unit == Unit::KG || this->_unit == Unit::TON){
     switch (p._unit)
     {
     	case Unit::G:
-
+	//calculate the result
         if(this->_unit == Unit::TON) return (this->_parameter==p._parameter/100000);
         else if(this->_unit == Unit::KG)return (this->_parameter==p._parameter/1000);
         else return (this->_parameter==p._parameter);
@@ -329,13 +357,15 @@ PhysicalNumber::PhysicalNumber(double parameter,Unit unit){
         if(this->_unit == Unit::TON) return (this->_parameter==p._parameter);
         else if(this->_unit == Unit::KG)return (this->_parameter==p._parameter*1000);
         else return (this->_parameter==p._parameter*100000);
-
+	//throw exception if the unit dont match
         default : throw std::invalid_argument("different dimentions");
     }
 }
+	    //case the number represent tome
  if(this->_unit == Unit::SEC || this->_unit == Unit::MIN || this->_unit == Unit::HOUR){
     switch (p._unit)
     {
+		    //calculate the result
     	case Unit::SEC:
 
         if(this->_unit == Unit::MIN) return (this->_parameter==p._parameter/60);
@@ -353,13 +383,14 @@ PhysicalNumber::PhysicalNumber(double parameter,Unit unit){
         if(this->_unit == Unit::HOUR) return (this->_parameter==p._parameter);
         else if(this->_unit == Unit::MIN)return (this->_parameter==p._parameter*60);
         else return (this->_parameter==p._parameter*3600);
-
+	//if the units dont match throw an exception
         default : throw std::invalid_argument("different dimentions");
     }
 }else
 	throw std::invalid_argument("different dimentions");
 }
 	/////////////////////////////////
+	// this method defines the operator << output
     ostream& operator<<(ostream& os, const PhysicalNumber& p){
 	switch(p._unit){
 	case Unit::KM : return os <<p._parameter<<"[km]";
@@ -374,6 +405,7 @@ PhysicalNumber::PhysicalNumber(double parameter,Unit unit){
 	}
 	}
 	//////////////////////////
+	//this method defines the operator >> input
     istream&  operator>> (istream& is, PhysicalNumber& p){
 	//std::stringstream temp;
 	//temp<<is.rdbuf()<<endl;
@@ -399,11 +431,13 @@ PhysicalNumber::PhysicalNumber(double parameter,Unit unit){
 
 
     ///////////////////////////////
+	//this method defines the operator++
     PhysicalNumber PhysicalNumber::operator++(){
 	_parameter++;
 	return *this;
 	}
 	//////////////////////////////
+//this method defines the operator++ with parameter
     PhysicalNumber PhysicalNumber::operator++(int postfix){
 	PhysicalNumber save = *this;
 	_parameter++;	
@@ -411,17 +445,21 @@ PhysicalNumber::PhysicalNumber(double parameter,Unit unit){
 }
 
 ////////////////////////////////////////////////--a////////////////////////////
+//this method defines the operator-- with parameter
+
     PhysicalNumber PhysicalNumber::operator--(){
 	_parameter--;
 	return (*this);
 	}
 ////////////////////////////////////////////////a--///////////////////////////////
+	//this method defines the operator-- with parameter
+
      PhysicalNumber PhysicalNumber::operator--(int postfix){
 	PhysicalNumber copy=*this;
 	_parameter--;
 	return (copy);
 	}
-
+//this method defines the operator!= with 2 parameteres
 
 bool operator!=(const PhysicalNumber& p1,const PhysicalNumber& p2){
 	return !(p1.operator==(p2));
