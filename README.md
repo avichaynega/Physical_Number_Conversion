@@ -29,3 +29,18 @@ any physical number with those signs will automaticly increase or decrease his a
 9. unequal. the method operator != checking the equivalent between two number. the method using the == operator, and return the opposite result.
 
 10. input and output operators. the method operator >> and operator << overload the sgns << and >>, with parameter . when the those signs are in use, the input method create new physical number, and the output method printing the number on the screen.
+
+## physicalnumber.h
+this file contain the name and type of any method
+
+## unit.h
+this file has enum class, unit,  which contain all the options for the units of physical number. the constructor of the physical number
+will use this class, and integer paramer.
+
+## physicalnumberTest.cpp
+
+this file contain tests of physical number  on any method. we used those tests to check edge cases and fix bugs in our methos.
+ 
+
+
+
