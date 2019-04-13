@@ -410,6 +410,7 @@ PhysicalNumber::PhysicalNumber(double parameter,Unit unit){
     istream&  operator>> (istream& is, PhysicalNumber& p){
 	//std::stringstream temp;
 	//temp<<is.rdbuf()<<endl;
+	ios::pos_type startPosition = is.tellg();
 	double a;	
 	is >> a;
 	p._parameter = a;
@@ -424,7 +425,11 @@ PhysicalNumber::PhysicalNumber(double parameter,Unit unit){
 	else if ( str == "[sec]"){p._unit = Unit::SEC;}
 	else if ( str == "[min]"){p._unit = Unit::MIN;}
 	else if( str == "[hour]"){p._unit = Unit::HOUR;}
-	else {p._parameter = 999;p._unit = Unit::G;}
+	else {auto errorState = inputis.rdstate(); // remember error state
+        is.clear(); // clear error so seekg will work
+        is.seekg(startPosition); // rewind
+        is.clear(errorState); // set back the error flag
+	     }
         return is;
 	}
 
