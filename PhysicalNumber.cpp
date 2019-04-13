@@ -307,7 +307,6 @@ PhysicalNumber::PhysicalNumber(double parameter,Unit unit){
 //////////////////////////////////////////////////////////////////////////////
 		//this method defines the operator >=
     bool PhysicalNumber::operator>=(const PhysicalNumber& p){
-	      cout<<">="<<endl;
 	return (this->operator>(p)|| this-> operator==(p));
 	}
 ////////////////////////////////////////////////////////////////////////////// 
@@ -416,7 +415,6 @@ PhysicalNumber::PhysicalNumber(double parameter,Unit unit){
 	p._parameter = a;
 	std::string str ;
 	is >> str;
-	cout << "str" <<str << endl; 
 	if ( str == "[kg]"){p._unit = Unit::KG;}
 	else if ( str == "[ton]"){p._unit = Unit::TON;}
 	else if ( str == "[g]"){p._unit = Unit::G;}
