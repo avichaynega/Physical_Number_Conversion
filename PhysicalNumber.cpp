@@ -434,9 +434,9 @@ PhysicalNumber::PhysicalNumber(double parameter,Unit unit){
 
     ///////////////////////////////
 	//this method defines the operator++
-    PhysicalNumber PhysicalNumber::operator++(){
+    PhysicalNumber& PhysicalNumber::operator++(){
 	_parameter++;
-	return *this;
+	return this;
 	}
 	//////////////////////////////
 //this method defines the operator++ with parameter
@@ -449,9 +449,9 @@ PhysicalNumber::PhysicalNumber(double parameter,Unit unit){
 ////////////////////////////////////////////////--a////////////////////////////
 //this method defines the operator-- with parameter
 
-    PhysicalNumber PhysicalNumber::operator--(){
+    PhysicalNumber& PhysicalNumber::operator--(){
 	_parameter--;
-	return (*this);
+	return this;
 	}
 ////////////////////////////////////////////////a--///////////////////////////////
 	//this method defines the operator-- with parameter
