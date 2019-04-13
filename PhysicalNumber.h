@@ -40,11 +40,11 @@ class PhysicalNumber {
 
     
     //overload operator ++ which increasing number by 0ne
-    PhysicalNumber operator++();
+    PhysicalNumber& operator++();
     //overload operator ++ which increasing number by 0ne with parameter
     PhysicalNumber operator++(int dummy_flag_for_postfix_increment) ;
     //overload operator ++ which decreasing number by 0ne
-    PhysicalNumber operator--();
+    PhysicalNumber& operator--();
      //overload operator ++ which dencreasing number by 0ne with parameter
     PhysicalNumber operator--(int dummy_flag_for_postfix_increment) ;
     
