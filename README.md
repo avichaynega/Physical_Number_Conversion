@@ -18,7 +18,7 @@ return true if the number equals 0 and false otherwise.
 
 5. comparison signs. the methods operator < , operator > , operator <= and operaor >= overloads those signs, and returning true if the current number and the given  number will confirm the comparison, and false otherwise. only same types of numbers can use this methods. attempting this method with to diffrent types will cause an exception.
 
-6.equal sign. the method operaor == overload the sign ==. this method comparing two physical number. if the numbers are equal 
+6. equal sign. the method operaor == overload the sign ==. this method comparing two physical number. if the numbers are equal 
 the method return true, false otherwise. only same types of numbers can use this methods. attempting this method with to diffrent types will cause an exception.
 
 7. increasing and decreasing operators. the methods "operator ++" "operator --" overloads the mathematical signs -- and +=,
@@ -28,4 +28,4 @@ any physical number with those signs will automaticly increase or decrease his a
 
 9. unequal. the method operator != checking the equivalent between two number. the method using the == operator, and return the opposite result.
 
-10.input and output operators. the method operator >> and operator << overload the sgns << and >>, with parameter . when the those signs are in use, the input method create new physical number, and the output method printing the number on the screen.
+10. input and output operators. the method operator >> and operator << overload the sgns << and >>, with parameter . when the those signs are in use, the input method create new physical number, and the output method printing the number on the screen.
