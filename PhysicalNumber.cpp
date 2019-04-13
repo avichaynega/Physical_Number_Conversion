@@ -425,7 +425,7 @@ PhysicalNumber::PhysicalNumber(double parameter,Unit unit){
 	else if ( str == "[sec]"){p._unit = Unit::SEC;}
 	else if ( str == "[min]"){p._unit = Unit::MIN;}
 	else if( str == "[hour]"){p._unit = Unit::HOUR;}
-	else {auto errorState = is.rdstate(); // remember error state
+	else {p._parameter=NULL;p._unit=NULL;auto errorState = is.rdstate(); // remember error state
         is.clear(); // clear error so seekg will work
         is.seekg(startPosition); // rewind
         is.clear(errorState); // set back the error flag
