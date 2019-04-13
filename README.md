@@ -35,11 +35,11 @@ this file contain the name and type of any method
 
 ## unit.h
 this file has enum class, unit,  which contain all the options for the units of physical number. the constructor of the physical number
-will use this class, and integer paramer.
+will use this class, and integer parameter.
 
 ## physicalnumberTest.cpp
 
-this file contain tests of physical number  on any method. we used those tests to check edge cases and fix bugs in our methos.
+this file contain tests of physical number  on any method. we used those tests to check edge cases and fix bugs in our methods.
  
 
 
