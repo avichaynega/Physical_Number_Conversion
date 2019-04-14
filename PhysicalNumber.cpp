@@ -410,6 +410,8 @@ PhysicalNumber::PhysicalNumber(double parameter,Unit unit){
     istream&  operator>> (istream& is, PhysicalNumber& p){
 	//std::stringstream temp;
 	//temp<<is.rdbuf()<<endl;
+	double d_prev = p._parameter;
+	 Unit  u_prev = p._unit;
 	ios::pos_type startPosition = is.tellg();
 	double a;	
 	is >> a;
@@ -429,6 +431,8 @@ PhysicalNumber::PhysicalNumber(double parameter,Unit unit){
         is.clear(); // clear error so seekg will work
         is.seekg(startPosition); // rewind
         is.clear(errorState); // set back the error flag
+	      p._parameter = d_prev;
+	      p._unit= u_prev;
 	     }
         return is;
 	}
