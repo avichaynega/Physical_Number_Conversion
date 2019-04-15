@@ -47,7 +47,7 @@ test code:
  PhysicalNumber a(2, Unit::KM);
  PhysicalNumber b(300, Unit::M);
  
- .CHECK_OUTPUT(b+a, "2300[m]")
+ .CHECK_OUTPUT(a+b, "2300[m]")
 ```
 
 output:
