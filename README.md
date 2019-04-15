@@ -39,6 +39,23 @@ Numbers with incompatible dimensions, for example, connecting "3 meters" with "5
    - ton
       - [ton]
       
+## Exempls
+
+test code:
+
+```c++
+ PhysicalNumber a(2, Unit::KM);
+ PhysicalNumber b(300, Unit::M);
+ 
+ .CHECK_OUTPUT(b+a, "2300[m]")
+```
+
+output:
+
+```c++
+ 2.3[km]
+```
+      
 ### Our mentor
 
 [Erel Segal-Halevi](https://github.com/erelsgl/ariel-cpp-5779) 
