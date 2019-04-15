@@ -1,46 +1,46 @@
-# Physical_Number_Conversion
+##### Create by:
+Omer Hadida, Avichay Nega, Oren Zauda
 
-## physicalnumber.cpp
+# Physical Number Conversion
 
-this file is the main code, its contain constructor, input and output methods, and aritmethic methods:
+In this task, we were asked to focus on the three dimensions of Newtonian physics: length, time, and mass.
 
-1. unary operators. the methods "operator +" "operator -" overloads the mathematical signs - and +,
-any physical number with those signs will automaticly consider positive or negative.
+## Usage
 
-2. addition and Subtraction. the methods "operator +" "operator -" with parameters, overloads the mathematical signs - and +,
-using this signs with another physical number will create new number, considering the units of the physical number.
- only same types of numbers can use this methods. attempting this method with to diffrent types will cause an exception.
- 
-3. addition and Subtraction to current physical numer. the methods "operator +=" "operator -=" with parameters, overloads the mathematical signs -= and +=, using this signs with another physical number will change the current physical number to the result of the arithmathic calculation. only same types of numbers can use this methods. attempting this method with to diffrent types will cause an exception.
+We were asked to write a department representing a number with units.
+In this class it is possible, for example, to represent the number "3 meters" and the number "40 centimeters", and their sum is not
+Will be 43 but 4.3 meters - the department will make sure to perform the appropriate conversion.
+In addition, the department will not allow a member
+Numbers with incompatible dimensions, for example, connecting "3 meters" with "5 seconds" will cause an exception.
 
-4. not sign. the operaor! overload the sign "!", any time this sign will be used near to mathematical number, the method
-return true if the number equals 0 and false otherwise.
+### Units of measurement
 
-5. comparison signs. the methods operator < , operator > , operator <= and operaor >= overloads those signs, and returning true if the current number and the given  number will confirm the comparison, and false otherwise. only same types of numbers can use this methods. attempting this method with to diffrent types will cause an exception.
+**Length**
+   - centimeter
+     - [cm]
+   - meter
+      - [m]
+   - kilometer
+      - [km]
+      
+**Time**
+   - seconds
+     - [sec]
+   - minuts
+      - [min]
+   - hours
+      - [hour]
+      
+**Mass**
+   - gram
+     - [g]
+   - kilogram
+      - [kg]
+   - ton
+      - [ton]
+      
+### Our mentor
 
-6. equal sign. the method operaor == overload the sign ==. this method comparing two physical number. if the numbers are equal 
-the method return true, false otherwise. only same types of numbers can use this methods. attempting this method with to diffrent types will cause an exception.
-
-7. increasing and decreasing operators. the methods "operator ++" "operator --" overloads the mathematical signs -- and +=,
-any physical number with those signs will automaticly increase or decrease his amount by one.
-
-8. increasing and decreasing operators . the methods "operator ++" "operator --" with parameters overloads the mathematical signs -- and +=, any physical number with those signs will automaticly increase or decrease his amount by one. the numbers will be change after the  method return the numbers.
-
-9. unequal. the method operator != checking the equivalent between two number. the method using the == operator, and return the opposite result.
-
-10. input and output operators. the method operator >> and operator << overload the sgns << and >>, with parameter . when the those signs are in use, the input method create new physical number, and the output method printing the number on the screen.
-
-## physicalnumber.h
-this file contain the name and type of any method
-
-## unit.h
-this file has enum class, unit,  which contain all the options for the units of physical number. the constructor of the physical number
-will use this class, and integer parameter.
-
-## physicalnumberTest.cpp
-
-this file contain tests of physical number  on any method. we used those tests to check edge cases and fix bugs in our methods.
- 
-
+[Erel Segal-Halevi](https://github.com/erelsgl/ariel-cpp-5779) 
 
 
