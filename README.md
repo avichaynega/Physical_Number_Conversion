@@ -1,5 +1,5 @@
 ##### Create by:
-Omer Hadida, Avichay Nega, Oren Zauda
+Omer Hadida, Avichay (Avtai) Nega, Oren Zauda
 
 # Physical Number Conversion
 
