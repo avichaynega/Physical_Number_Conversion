@@ -13,7 +13,7 @@ Will be 43 but 4.3 meters - the department will make sure to perform the appropr
 In addition, the department will not allow a member
 Numbers with incompatible dimensions, for example, connecting "3 meters" with "5 seconds" will cause an exception.
 
-### Units of measurement
+### Units of measurement:
 
 **Length**
    - centimeter
