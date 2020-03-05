@@ -1,5 +1,5 @@
-##### Create by:
-Avichay (Avtai) Nega,[Omer Hadida](https://github.com/2MarShmello2), [Oren Zauda](https://github.com/OrenZauda)
+##### Authors:
+Avichay Nega,[Omer Hadida](https://github.com/2MarShmello2), [Oren Zauda](https://github.com/OrenZauda)
 
 # Physical Number Conversion
 
