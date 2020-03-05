@@ -39,7 +39,7 @@ Numbers with incompatible dimensions, for example, connecting "3 meters" with "5
    - ton
       - [ton]
       
-## Exempls
+## Example
 
 test code:
 
